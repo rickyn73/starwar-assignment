@@ -1,0 +1,16 @@
+html,
+body {
+    @extend %height-100;
+    @extend %overflow-hidden;
+}
+
+body > #root,
+.app-layout,
+.assignment-container {
+    @extend %height-100;
+    
+}
+
+.app-layout {
+    @extend %p-30-important;
+}

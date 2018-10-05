@@ -1,0 +1,2 @@
+
+export {getLocationList} from "./LocationActions";

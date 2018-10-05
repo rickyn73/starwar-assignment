@@ -1,0 +1,75 @@
+{
+  "name": "Assignment",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "bootstrap": "^4.1.3",
+    "enzyme": "^3.5.0",
+    "enzyme-adapter-react-16": "^1.3.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.5.0",
+    "jquery": "^3.3.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-intl": "^2.4.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-scripts": "1.1.5",
+    "reactstrap": "^6.4.0",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "save-dev": "^2.0.0",
+    "webpack": "^4.17.1"
+  },
+  "scripts": {
+    "start": "SET NODE_ENV=LOCAL && SET APP_ENV=local && webpack-dev-server --mode=development --hot --history-api-fallback --color --open",
+    "build": "",
+    "test": "jest",
+    "sass-compile": "npm run app-structure",
+    "sass-compile-compressed": "npm run app-structure -- --output-style compressed && npm run error-screens -- --output-style compressed",
+    "app-structure": "node-sass src/Assets/scss/main.scss src/Assets/css/main.css"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "enzyme": "^3.5.0",
+    "eslint": "^5.4.0",
+    "eslint-plugin-react-redux": "^2.3.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.5.0",
+    "jest-cli": "^23.5.0",
+    "node-sass": "^4.9.3",
+    "postcss-loader": "^3.0.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.4.2",
+    "sass-loader": "^7.1.0",
+    "sass-watch": "^0.1.0",
+    "style-loader": "^0.23.0",
+    "url-loader": "^1.1.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/src/**",
+      "!**/node_modules/**",
+      "!**/assets/**",
+      "!**/__tests__/**"
+    ],
+    "globals": {
+      "window": true
+    },
+    "moduleNameMapper": {
+      "\\.(css|less|saas|scss|jpg)$": "identity-obj-proxy"
+    },
+    "setupTestFrameworkScriptFile": "./src/setupTests.js"
+  }
+}

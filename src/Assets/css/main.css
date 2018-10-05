@@ -1,0 +1,59 @@
+.app-layout {
+  padding: 30px !important; }
+
+html,
+body, body > #root, .app-layout,
+.assignment-container {
+  height: 100%; }
+
+html,
+body {
+  overflow: hidden; }
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Roboto-Regular.ttf?") format("ttf"); }
+
+.Input {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  border-bottom: 1px solid #58a4b0;
+  margin: 0 20px; }
+  .Input input {
+    border: 0;
+    background: transparent;
+    padding: 2px 10px;
+    margin: 18px 4px 0 4px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "Roboto", sans-serif;
+    font-size: 14px; }
+    .Input input:required {
+      box-shadow: none; }
+    .Input input:focus ~ label {
+      opacity: 1; }
+    .Input input[type='text'] ~ label .Input input::before {
+      content: "\f007"; }
+    .Input input[type='password'] ~ label .Input input::before {
+      content: "\f023"; }
+
+label {
+  font-family: FontAwesome;
+  color: white;
+  font-size: 14px;
+  margin-top: 17px;
+  transition: opacity .3s ease-in-out; }
+  label::before {
+    padding: 5px 5px 0 0;
+    opacity: 0.5; }
+
+.login-wrapper .Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(40, 75, 99, 0.8);
+  background-size: cover;
+  border-radius: 5px; }
