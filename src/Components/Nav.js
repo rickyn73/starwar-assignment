@@ -14,7 +14,7 @@ export const  Nav = (props) => (
                 null
                 :
                     <li className="nav-item active">
-                        <a className="nav-link" onClick={props.handleClick} href="#">{localStorage.getItem('user')} Logout</a>
+                        <a className="nav-link" onClick={props.handleClick} href="#">{localStorage.getItem('user')} | Logout</a>
                     </li>
                 }
                 </ul>

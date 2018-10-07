@@ -6,6 +6,7 @@ class LoginService {
 
     login = (name, birth) => {
         localStorage.removeItem('user');
+        Dispatcher.dispatchEvents(GET_USER_DETAILS, {payload:'', title:'',message:''});
         NetworkManager.getAPI(`${configuration.baseUrl}${configuration.loginUrl}`)
             .then((response) => {
                 // TODO:: data processing

@@ -9,7 +9,7 @@ export const PlanetList = (props) => (
         <div className="d-flex justify-content-between align-items-center w-100">
           <strong className="text-gray-dark">Diameter - {props.planet.diameter}</strong>
         </div>
-        <span class="d-block"></span>
+        <span className="d-block"></span>
       </div>
     </div>
   </div>

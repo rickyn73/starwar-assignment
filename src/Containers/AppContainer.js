@@ -2,6 +2,7 @@ import React from "react";
 import { Nav } from '../Components/Nav';
 import LoginComponent from "../Components/LoginComponent";
 import SearchComponent from "../Components/SearchComponent";
+import { SpinnerComponent } from '../Components/SpinnerComponent';
 import LoginServiceInst   from '../Services/LoginService';
 import PlanetServiceInst   from '../Services/PlanetService';
 import { connect } from 'react-redux';
@@ -30,12 +31,10 @@ class AppContainer extends React.Component {
         PlanetServiceInst.planetByName(searchTerm);
     }
 
-    componentWillReceiveProps() {
-    }
-
     render() {
         return (
             <div className="app-container">
+                {<SpinnerComponent loading={this.props.loading} />}
                 <Nav logo={'STAR WAR'} handleClick={this.handleClick} />
                 
                 {this.props.error && this.props.pdata.length <=0 ?  toastr.error(this.props.error.title, this.props.error.message): null}

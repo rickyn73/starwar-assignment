@@ -1,5 +1,9 @@
 import React from "react";
 import { PlanetList } from './PlanetList';
+import { debounce } from 'lodash';
+import moment from 'moment';
+let startTime = '';
+let counter = 0;
 export default class SearchComponent extends React.Component {
 
     constructor() {
@@ -15,7 +19,41 @@ export default class SearchComponent extends React.Component {
     }
 
     handleChange(event) {
-        this.props.handleChange(event.target.value);
+         let value = event.target.value;
+    //     if(startTime == "") {
+    //         startTime = new Date();
+    //     }
+    //     if(localStorage.getItem('user') != "Luke Starwalker") {
+    //         if(startTime.getSeconds() >= 60) {
+    //             counter = 0;
+    //             this.limitmsg = ''; 
+    //             startTime = "";
+    //         }
+    //         if(counter <= 15) {
+    //            const debounceCall = debounce(() => {
+    //                 this.props.handleChange(value);
+    //                 counter ++;
+    //             } , 500);
+    //             debounceCall();
+    //         }else {
+    //             this.limitmsg = "Limit exaust per minute planet search";
+    //             console.log(counter);
+    //             console.log("seconds",startTime.getSeconds());
+    //         }
+             
+    //     } else {const debounceCall = debounce(() => {
+    //         this.props.handleChange(value);
+            
+    //     } , 500);
+    //     debounceCall();
+    //   }
+
+        const debounceCall = debounce(() => {
+            this.props.handleChange(value);
+            
+        } , 500);
+        debounceCall();
+        
     }
 
 

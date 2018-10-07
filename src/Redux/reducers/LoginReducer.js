@@ -11,8 +11,8 @@ export default function LoginReducer(state = INITIAL_STATE, action = {}) {
         case GET_USER_DETAILS:
             return {
                 ...state,
-                data: action.payload.payload,
-                success: {title:action.payload.title, message:action.payload.message},
+                data: '',
+                success: '',
                 loading: true,
                 error: ''
             };

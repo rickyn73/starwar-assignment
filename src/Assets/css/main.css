@@ -1,9 +1,24 @@
 .app-layout .app-container .Modal form {
   margin-bottom: 15px; }
 
+.app-layout .app-container .spinner-mask:before {
+  min-height: 100%; }
+
 html,
 body {
   height: 100%; }
+
+.app-layout .app-container .spinner-mask, .app-layout .app-container .spinner-mask:before {
+  top: 0; }
+
+.app-layout .app-container .spinner-mask {
+  right: 0; }
+
+.app-layout .app-container .spinner-mask, .app-layout .app-container .spinner-mask:before {
+  left: 0; }
+
+.app-layout .app-container .spinner-mask {
+  bottom: 0; }
 
 html,
 body {
@@ -122,6 +137,19 @@ label {
       .app-layout .app-container .Modal .Input label::before {
         padding: 5px 5px 0 0;
         opacity: 0.5; }
+
+.app-layout .app-container .spinner-mask {
+  position: fixed;
+  z-index: 999;
+  margin: auto; }
+
+.app-layout .app-container .spinner-mask:before {
+  animation: spin 2s linear infinite;
+  content: '';
+  display: block;
+  position: fixed;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5); }
 
 .app-layout .app-container .container .planet-list-wrapper {
   overflow-y: auto;

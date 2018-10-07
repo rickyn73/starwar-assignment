@@ -98,5 +98,25 @@
             }
         
         }
+        .spinner-mask {
+            @extend %top-0;
+            @extend %left-0;
+            @extend %right-0;
+            @extend %bottom-0;
+            position: fixed;
+            z-index: 999;
+            margin: auto;
+        }
+        .spinner-mask:before {
+            @extend %top-0;
+            @extend %left-0;
+            @extend %min-height-100;
+            animation: spin 2s linear infinite;
+            content: '';
+            display: block;
+            position: fixed;
+            width: 100%;
+            background-color: $pantone;
+        }
     }
 }
