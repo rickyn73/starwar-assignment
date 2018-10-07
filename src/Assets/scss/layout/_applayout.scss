@@ -7,10 +7,10 @@ body {
 body > #root,
 .app-layout,
 .assignment-container {
-    @extend %height-100;
+    @extend %remove-padding;
     
 }
 
 .app-layout {
-    @extend %p-30-important;
+    @extend %remove-padding;
 }

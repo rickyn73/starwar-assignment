@@ -1,15 +1,22 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 import store from "./Redux/Store";
 import {Provider} from "react-redux";
-
+import ReduxToastr from 'react-redux-toastr'
 ReactDOM.render(
     <Provider store={store}>
+        <div>
         <App />
+        <ReduxToastr
+            timeOut={4000}
+            newestOnTop={false}
+            preventDuplicates
+            position="top-center"
+            transitionIn="fadeIn"
+            transitionOut="fadeOut"
+            progressBar
+            closeOnToastrClick/>
+        </div>
     </Provider>, 
 document.getElementById('root'));
-registerServiceWorker();

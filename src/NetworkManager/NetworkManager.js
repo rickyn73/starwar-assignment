@@ -13,14 +13,6 @@ class NetworkManagerClass {
     postAPI(path, data, reqHeaders={}) {
         return this.http.post(path, data, {headers: reqHeaders});
     }
-
-    putAPI(path, data, reqHeaders={}) {
-        return this.http.put(path, data, {headers: reqHeaders});
-    }
-
-    all(path) {
-        return this.http.all(path);
-    }
 }
 
 const NetworkManager = new NetworkManagerClass();

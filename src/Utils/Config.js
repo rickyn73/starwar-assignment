@@ -1,6 +1,9 @@
 
 const configuration = {
-    baseUrl: "https://reqres.in/api/"
+    baseUrl: "https://swapi.co/api/",
+    loginUrl: 'people/',
+    planetUrl: 'planets/',
+    planetSearch:'?search='
 };
 
 

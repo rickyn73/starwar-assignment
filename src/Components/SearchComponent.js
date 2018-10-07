@@ -1,62 +1,56 @@
 import React from "react";
-
-class SearchComponent extends React.Component {
+import { PlanetList } from './PlanetList';
+export default class SearchComponent extends React.Component {
 
     constructor() {
         super();
         this.state = {
             
         }
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
         console.log(nextProps);
     }
 
-    onClickHandle() {
-        LocationServiceInst.getLocationGata();
+    handleChange(event) {
+        this.props.handleChange(event.target.value);
+    }
+
+
+    planetList() {
+        let counter = 900;
+        let Planet  = this.props.planetList.map((planet, index) => {
+            if(planet.population != 'unknown') {
+                counter = counter - index*10;
+                return <PlanetList key={index} styleDetails={{width: counter, border: '1px solid black'}} planet={planet} />
+            }
+        })
+        return Planet;
+    }
+
+    unknownPlanet() {
+        return this.props.planetList.map((planet, index) => {
+            if(planet.population === 'unknown') {
+                return <PlanetList key={index} styleDetails={{border:'1px solid black'}} planet={planet} />
+            }
+        })
     }
 
     render() {
+        const unknownPopulation = this.unknownPlanet(this.props.planetList);
         return (
-            <div className="row location-container">
-                <div className="col-md-6 col-lg-4 padding-0" >
-                    <div class="input-group">
-                        <button class="form-control" onClick={() => this.onDropDownClick()}>
-                            <span className="placeholder-text">
-                                Select your location
-                            </span>                            
-                            <i class={this.getArrowIcon()}></i>
-                        </button>
-                    </div>
-
+            <main role="main" className="container">
+                <div className="d-flex align-items-center p-3 my-3 text-white-50 bg-black rounded box-shadow">
+                <input onChange={this.handleChange} className="form-control form-control-lg" type="text" placeholder="Search planet" />
                 </div>
-
-                <div className="col-md-1 col-lg-1">
-                    <button
-                        onClick={() => this.onClickHandle()}
-                        type="submit"
-                        className="btn btn-default go-btn"
-                    >
-                        Go
-                    </button>
+                <div className='planet-list-wrapper'>
+                    {this.planetList() != "" ? <div><div className="unknown-style"><hr /> POPULATION IN DESCENDING <hr /></div><div>{this.planetList()}</div></div> :null }
+                    {unknownPopulation != "" ? <div className="unknown-style"><hr /> UNKNOWN POPULATION <hr /></div> :null }
+                    {unknownPopulation}
                 </div>
-
-                <div className="col-md-5 col-lg-7">
-
-                </div>
-            </div>
+                </main>
         )
     }
 }
-
-function mapStateToProps({ LocationReducer }) {
-    const { data } = LocationReducer
-    return {
-        data
-    }
-}
-
-
-
-export default connect(mapStateToProps, { getLocationList })(LocationComponent);

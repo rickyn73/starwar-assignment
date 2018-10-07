@@ -1,14 +1,18 @@
-.app-layout {
-  padding: 30px !important; }
+.app-layout .app-container .Modal form {
+  margin-bottom: 15px; }
 
 html,
-body, body > #root, .app-layout,
-.assignment-container {
+body {
   height: 100%; }
 
 html,
 body {
   overflow: hidden; }
+
+body > #root,
+.app-layout,
+.assignment-container {
+  padding: 0 !important; }
 
 @font-face {
   font-family: "Roboto";
@@ -49,11 +53,86 @@ label {
     padding: 5px 5px 0 0;
     opacity: 0.5; }
 
-.login-wrapper .Modal {
+.app-layout .app-container .bg-black {
+  background-color: #000000; }
+
+.app-layout .app-container .box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05); }
+
+.app-layout .app-container .Modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(40, 75, 99, 0.8);
+  background: #000000;
   background-size: cover;
   border-radius: 5px; }
+  .app-layout .app-container .Modal .logo {
+    text-align: center;
+    color: white; }
+    .app-layout .app-container .Modal .logo i {
+      display: block;
+      padding: 20px 0 0 0;
+      font-size: 70px; }
+    .app-layout .app-container .Modal .logo span {
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase; }
+  .app-layout .app-container .Modal form button {
+    position: relative;
+    margin: 15px 0 5px 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #58a4b0;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    width: 85%;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    cursor: pointer; }
+  .app-layout .app-container .Modal .Input {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    border-bottom: 1px solid #58a4b0;
+    margin: 0 20px; }
+    .app-layout .app-container .Modal .Input:input {
+      border: 0;
+      background: transparent;
+      padding: 2px 10px;
+      margin: 18px 4px 0 4px;
+      color: rgba(255, 255, 255, 0.7);
+      font-family: "Roboto", sans-serif;
+      font-size: 14px; }
+      .app-layout .app-container .Modal .Input:input:required {
+        box-shadow: none; }
+      .app-layout .app-container .Modal .Input:input:focus ~ label {
+        opacity: 1; }
+      .app-layout .app-container .Modal .Input:input[type='text'] ~ label .app-layout .app-container .Modal .Input:input::before {
+        content: "\f007"; }
+      .app-layout .app-container .Modal .Input:input[type='password'] ~ label .app-layout .app-container .Modal .Input:input::before {
+        content: "\f023"; }
+    .app-layout .app-container .Modal .Input label {
+      font-family: FontAwesome;
+      color: white;
+      font-size: 14px;
+      margin-top: 17px;
+      transition: opacity .3s ease-in-out; }
+      .app-layout .app-container .Modal .Input label::before {
+        padding: 5px 5px 0 0;
+        opacity: 0.5; }
+
+.app-layout .app-container .container .planet-list-wrapper {
+  overflow-y: auto;
+  height: 500px; }
+
+.app-layout .app-container .container .unknown-style {
+  text-align: center;
+  background: #58a4b0;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px; }
